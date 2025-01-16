@@ -1,3 +1,4 @@
+#define GLM_FORCE_CTOR_INIT
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -148,8 +149,12 @@ int main() {
         glm::mat4 rotateZ = glm::rotate(glm::mat4(1.0f), rotation.z, glm::vec3(0.0f, 0.0f, 1.0f));
         glm::mat4 scale = glm::scale(glm::mat4(1.0f), scaling);
 
-        glm::mat4 rotationMatrix = scale * rotateY * rotateZ * rotateX * glm::mat4(1.0f);
-        glm::mat4 modelMatrix = translate * rotationMatrix;
+        glm::mat4 rotationMatrix = glm::mat4(1.0f);
+        rotationMatrix = scale * rotationMatrix;
+        rotationMatrix = rotateY * rotationMatrix;
+        rotationMatrix = rotateZ * rotationMatrix;
+        rotationMatrix = rotateX * rotationMatrix;
+        glm::mat4 modelMatrix = translate * rotationMatrix * glm::mat4(1.0f);
 
         std::string modelMatName = "modelMatrix";
         int modelMatLoc = glGetUniformLocation(shaderProgram, modelMatName.c_str());
