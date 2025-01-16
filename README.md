@@ -17,8 +17,7 @@ sudo apt install libwayland-dev libxkbcommon-dev wayland-protocols extra-cmake-m
 ### 5. Steps to run 
 This project has a `demo` folder and an `exercise` folder.    
 Run the `.bat`(windows) or `.sh` (linux and Mac) files in the main folder to run demo or exercise program.  
-Alternatively use the commands:
-Navigate to the respective folder to run, and then use the following commands: 
+Alternatively navigate to the respective folder to run, and then use the following commands: 
 ```sh
 mkdir build
 cd build
