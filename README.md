@@ -15,7 +15,9 @@ sudo apt install build-essential cmake libx11-dev libxrandr-dev libxinerama-dev 
 sudo apt install libwayland-dev libxkbcommon-dev wayland-protocols extra-cmake-modules
 ```
 ### 5. Steps to run 
-This project has a `demo` folder and an `exercise` folder.  
+This project has a `demo` folder and an `exercise` folder.    
+Run the `.bat`(windows) or `.sh` (linux and Mac) files in the main folder to run demo or exercise program.  
+Alternatively use the commands:
 Navigate to the respective folder to run, and then use the following commands: 
 ```sh
 mkdir build
@@ -24,8 +26,6 @@ cmake -G "MinGW Makefiles" ..  (windows)    OR   cmake ..        (Mac and linux)
 cmake --build .
 ```
 Then run the `OpenGLTutorialExe` executable inside the build folder.
-
-Alternatively, just run the `.bat`(windows) or `.sh` (linux) files in the main folder to automate this process.
 
 The following window should appear if everything is working correctly.
 ![image](readme_resources/demo_image.jpg)
