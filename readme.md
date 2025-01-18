@@ -22,6 +22,11 @@ PyOpenGLTutorial/
 └── readme.md
 ```
 Navigate to respective demo folder and run the main python file in it.
+example:
+```sh
+cd demo_0/
+python 0_simple_window.py
+```
 
 ## Exercise:
 Complete the following tasks (Using codes from demo folders as you wish):
