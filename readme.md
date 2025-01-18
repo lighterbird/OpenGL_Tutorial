@@ -33,3 +33,9 @@ Complete the following tasks (Using codes from demo folders as you wish):
 
 The output should look something like this (for n = 6)  
 ![loading animation](readme_resources/exercise_soln.gif)
+
+## References
+Use the following reference links to further learn python opengl
+1. [Youtube tutorial series](https://www.youtube.com/playlist?list=PL1P11yPQAo7opIg8r-4BMfh1Z_dCOfI0y)
+2. [Opengl tutorial website (For theory part)](https://learnopengl.com/)
+3. [Opengl documentation](https://docs.gl/)
