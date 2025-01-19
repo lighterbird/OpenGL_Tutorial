@@ -1,7 +1,7 @@
 # Python OpenGL Tutorial
 
 ## Steps to Get Started: 
-### 1. Install Required libraries:
+### 1. Install Required libraries (Recommended python 3.9):
 ```sh
 pip install PyOpenGL PyOpenGL_accelerate pyrr glfw
 ```
