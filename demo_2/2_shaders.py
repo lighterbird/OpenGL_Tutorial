@@ -1,6 +1,5 @@
 import numpy as np
 import glfw
-import pyrr
 from OpenGL.GL import *
 
 from graphics import VBO, IBO, VAO, Shader
@@ -83,7 +82,7 @@ class App:
 
         # Object position, rotation and scale
         position = np.array([0.0, 0.0, 0.0], dtype = np.float32)
-        euler_rotation = np.array([0.0, 0.0, 0.0], dtype = np.float32)
+        rotation_z = 0.0
         scale = np.array([1.0, 1.0, 1.0], dtype = np.float32)
 
         # Render loop
@@ -99,14 +98,11 @@ class App:
             position[0] += 0.0001
 
             # Compute the uniforms
-            translation_matrix = pyrr.matrix44.create_from_translation(position, dtype=np.float32).T
-            scaling_matrix = pyrr.matrix44.create_from_scale(scale)
-            rotation_matrix_x = pyrr.matrix44.create_from_x_rotation(np.radians(euler_rotation[0]), dtype=np.float32).T
-            rotation_matrix_y = pyrr.matrix44.create_from_y_rotation(np.radians(euler_rotation[1]), dtype=np.float32).T
-            rotation_matrix_z = pyrr.matrix44.create_from_z_rotation(np.radians(euler_rotation[2]), dtype=np.float32).T
-            rotation_matrix = pyrr.matrix44.multiply(m1=rotation_matrix_z, m2=pyrr.matrix44.multiply(m1=rotation_matrix_y, m2=rotation_matrix_x))
-            model_matrix =  pyrr.matrix44.multiply(m1=translation_matrix, m2=pyrr.matrix44.multiply(m1 = scaling_matrix, m2 = rotation_matrix))
-
+            translation_matrix = np.array([[1,0,0, position[0]],[0,1,0, position[1]],[0,0,1, position[2]],[0,0,0,1]], dtype = np.float32)
+            rotation_z_matrix = np.array([[np.cos(rotation_z), -np.sin(rotation_z),0, 0],[np.sin(rotation_z), np.cos(rotation_z), 0, 0],[0,0,1,0],[0,0,0,1]], dtype = np.float32)
+            scale_matrix = np.array([[scale[0], 0,0,0],[0,scale[1],0,0],[0,0,scale[2],0],[0,0,0,1]], dtype = np.float32)
+            model_matrix = translation_matrix @ rotation_z_matrix @ scale_matrix
+ 
             # Bind the shader, set uniforms, bind vao (automatically binds vbo) and ibo
             shader.Use()
             modelMatrixLocation = glGetUniformLocation(shader.ID, "modelMatrix".encode('utf-8'))
