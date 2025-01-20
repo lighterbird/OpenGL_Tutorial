@@ -8,7 +8,11 @@ class App:
     def __init__(self, width, height):
         # Initialize glfw
         glfw.init()
-
+        glfw.window_hint(glfw.CONTEXT_VERSION_MAJOR, 3)
+        glfw.window_hint(glfw.CONTEXT_VERSION_MINOR, 3)
+        glfw.window_hint(glfw.OPENGL_PROFILE, glfw.OPENGL_CORE_PROFILE)
+        glfw.window_hint(glfw.OPENGL_FORWARD_COMPAT, GL_TRUE)
+        
         # Create a window using glfw
         self.windowHeight = height
         self.windowWidth = width
