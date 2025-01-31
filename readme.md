@@ -18,6 +18,7 @@ PyOpenGLTutorial/
 ├── demo_0/
 ├── demo_1/
 ├── demo_2/
+├── demo_3/
 ├── readme_resources/
 └── readme.md
 ```
@@ -28,7 +29,7 @@ cd demo_0/
 python 0_simple_window.py
 ```
 
-## Exercise:
+## Exercise 1:
 Complete the following tasks (Using codes from demo folders as you wish):
 
 ### Tasks
@@ -38,6 +39,14 @@ Complete the following tasks (Using codes from demo folders as you wish):
 
 The output should look something like this (for n = 6)  
 ![loading animation](readme_resources/exercise_soln.gif)
+
+## Exercise 2:
+Complete the following tasks (Using codes from demo_3 folder):
+
+### Tasks
+1. Constrain the circle from going outside the screen bounds 
+2. Disable manual input, and make the circle fall to the ground like a rigid body (ie- add gravity).
+3. Make it so that pressing/holding SPACE spawns new circles with randomized initial velocities, and they bounce back when colliding with screen borders (ignore collisions among circles)
 
 ## References
 Use the following reference links to further learn python opengl
