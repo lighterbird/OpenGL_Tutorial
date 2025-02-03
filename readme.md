@@ -38,7 +38,7 @@ Complete the following tasks (Using codes from demo folders as you wish):
 3. Make the polygon rotate and translate from left to right (reversing direction on going out of bounds)
 
 The output should look something like this (for n = 6)  
-![loading animation](readme_resources/exercise_soln.gif)
+![loading animation](readme_resources/exercise_1_soln.gif)
 
 ## Exercise 2:
 Complete the following tasks (Using codes from demo_3 folder):
@@ -47,6 +47,9 @@ Complete the following tasks (Using codes from demo_3 folder):
 1. Constrain the circle from going outside the screen bounds 
 2. Disable manual input, and make the circle fall to the ground like a rigid body (ie- add gravity).
 3. Make it so that pressing/holding SPACE spawns new circles with randomized initial velocities, and they bounce back when colliding with screen borders (ignore collisions among circles)
+
+The output should look something like this
+![loading animation](readme_resources/exercise_2_soln.gif)
 
 ## References
 Use the following reference links to further learn python opengl
