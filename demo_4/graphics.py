@@ -41,6 +41,8 @@ class VAO:
 
 class Shader:
     def __init__(self, vertex_shader, fragment_shader):
+        self.vao = glGenVertexArrays(1) # Added since causing issue in mac (ignore for windows/linux)
+        glBindVertexArray(self.vao) # Added since causing issue in mac (ignore for windows/linux)
         self.ID = compileProgram(compileShader(vertex_shader, GL_VERTEX_SHADER), compileShader(fragment_shader, GL_FRAGMENT_SHADER))
         self.Use()
     def Use(self):
